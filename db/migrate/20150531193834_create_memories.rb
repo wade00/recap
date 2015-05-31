@@ -1,7 +1,6 @@
 class CreateMemories < ActiveRecord::Migration
   def change
     create_table :memories do |t|
-      t.string :image_file_name
       t.text :description
       t.references :event, index: true
 

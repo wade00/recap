@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # Default mailer URL for development environment
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Tells Paperclip gem to look in correct directory for images
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
