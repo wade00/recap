@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image file name,:</strong>
+  <%= @memory.image_file_name, %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @memory.description %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @memory.event %>
+</p>
+
+<%= link_to 'Edit', edit_memory_path(@memory) %> |
+<%= link_to 'Back', memories_path %>
