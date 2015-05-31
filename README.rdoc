@@ -1,28 +1,5 @@
-== README
+== Recap README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app helps a document an event by giving a group of users SMS reminders to snap a picture or video. When the event ends a recap is sent out to the group.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This is a one man project. If you're interested in working on this or a different cool project get at me on Twitter @WadeNovak
