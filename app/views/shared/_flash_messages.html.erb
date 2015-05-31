@@ -1,0 +1,13 @@
+<% flash.each do |msg_type, message| %>
+  <% alert_type = "" %>
+  <% if msg_type == 'success' %>
+    <% alert_type = 'success' %>
+  <% elsif msg_type == 'error' %>
+    <% alert_type = 'danger' %>
+  <% elsif msg_type == 'alert' %>
+    <% alert_type = 'warning' %>
+  <% elsif msg_type == 'notice' %>
+    <% alert_type = 'warning' %>
+  <% end %>
+  <%= content_tag :div, message, class: "flash-container alert alert-#{alert_type}", id: "flash", role: "alert" %>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>
+    <%= pluralize(resource.errors.count, "error") %> prohibited this machine from being saved:
+  </strong>
+  <ul>
+    <% resource.errors.full_messages.each do |message| %>
+      <li><small><%= message %></small></li>
+    <% end %>
+  </ul>
+</div>

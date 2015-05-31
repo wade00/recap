@@ -20,8 +20,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image_file_name %><br>
-    <%= f.text_field :image_file_name %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
@@ -33,15 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :reminder_interval %><br>
-    <%= f.number_field :reminder_interval %>
+    <%= f.number_field :reminder_interval %> reminders
   </div>
   <div class="field">
     <%= f.label :recap_alert_time %><br>
     <%= f.datetime_select :recap_alert_time %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

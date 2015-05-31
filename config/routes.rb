@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :participants
-
-  resources :memories
-
-  resources :events
+  root to: "events#index"
 
   devise_for :users
-  root to: "users#index"
+  resources :events do
+    resources :memories
+  end
+  resources :participants
 end

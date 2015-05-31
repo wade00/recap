@@ -4,14 +4,18 @@
   <title>Recap</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <% unless flash.empty? %>
+      <div class="flash-container">
+        <%= render 'shared/flash_messages' %>
+      </div>
+    <% end %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
