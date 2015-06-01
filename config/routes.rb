@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  root to: "events#index"
-
-  get "twilio/text" => "twilio#text"
+  root to: "events#new"
 
   devise_for :users
 
   resources :events do
-    resources :memories, :invites
+    resources :memories, only: [:index, :new, :create]
+    resources :invites, only: [:new, :create, :destroy]
+    resources :participants, only: [:new, :create, :destroy]
   end
-
-  resources :participants
 end

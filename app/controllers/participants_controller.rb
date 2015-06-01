@@ -1,18 +1,8 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @participants = Participant.all
-  end
-
-  def show
-  end
-
   def new
     @participant = Participant.new
-  end
-
-  def edit
   end
 
   def create
@@ -24,18 +14,6 @@ class ParticipantsController < ApplicationController
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @participant.update(participant_params)
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @participant }
-      else
-        format.html { render :edit }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end

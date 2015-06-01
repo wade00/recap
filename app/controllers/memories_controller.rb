@@ -6,14 +6,8 @@ class MemoriesController < ApplicationController
     @memories = @event.memories.all
   end
 
-  def show
-  end
-
   def new
     @memory = Memory.new
-  end
-
-  def edit
   end
 
   def create
@@ -27,26 +21,6 @@ class MemoriesController < ApplicationController
         format.html { render :new }
         format.json { render json: @memory.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @memory.update(memory_params)
-        format.html { redirect_to event_memories_path, notice: 'Memory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @event.memory }
-      else
-        format.html { render :edit }
-        format.json { render json: @memory.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @memory.destroy
-    respond_to do |format|
-      format.html { redirect_to event_memories_path, notice: 'Memory was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
