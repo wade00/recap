@@ -15,7 +15,7 @@ class MemoriesController < ApplicationController
 
     respond_to do |format|
       if @memory.save
-        format.html { render "static_pages/successful_submit", notice: 'Memory was successfully created.' }
+        format.html { redirect_to thanks_path, notice: 'Memory stored. Boom.' }
       else
         format.html { render :new }
       end

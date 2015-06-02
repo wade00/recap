@@ -1,0 +1,26 @@
+html, body {
+  font-family: 'Open-sans', 'Helvetica', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.btn-primary {
+  background-color: $primarygreen;
+  border: 1px solid $primarygreen;
+  border-bottom: 2px solid darken($primarygreen, 10%);
+  &:hover {
+    background-color: darken($primarygreen, 5%);
+    border: 1px solid darken($primarygreen, 5%);
+    border-bottom: 2px solid darken($primarygreen, 15%);
+  }
+  &:active, &:focus {
+    background-color: lighten($primarygreen, 5%);
+    border: 1px solid lighten($primarygreen, 5%);
+    border-bottom: 2px solid darken($primarygreen, 5%);
+  }
+}

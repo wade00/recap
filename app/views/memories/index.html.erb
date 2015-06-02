@@ -1,5 +1,8 @@
 <div class="container text-center">
-  <h1><%= @event.name %></h1>
+  <div class="event-memory-header">
+    <h1><%= @event.name %> <span>Recap</span></h1>
+  </div>
+  <hr />
 
   <% @memories.each do |memory| %>
     <div class="recap-image">
@@ -9,4 +12,10 @@
       <%= memory.description %>
     </div>
   <% end %>
+
+  <hr />
+
+  <footer>
+    <p>That's it. Nice job guys.</p>
+  </footer>
 </div>
