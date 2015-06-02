@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { render 'particpants/new', notice: 'Event was successfully created.' }
+        format.html { redirect_to new_event_participant_path(@event), notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }

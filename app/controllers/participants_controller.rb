@@ -1,5 +1,10 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
+  before_action :set_event
+
+  def index
+    @participants = @event.participants
+  end
 
   def new
     @participant = Participant.new
@@ -10,7 +15,8 @@ class ParticipantsController < ApplicationController
 
     respond_to do |format|
       if @participant.save
-        format.html { render 'invites/new', notice: 'Participant was successfully created.' }
+        format.html { redirect_to new_event_participant_path,
+                      notice: 'Participant added.' }
       else
         format.html { render :new }
       end
@@ -27,6 +33,10 @@ class ParticipantsController < ApplicationController
   private
     def set_participant
       @participant = Participant.find(params[:id])
+    end
+
+    def set_event
+      @event = Event.find(params[:event_id])
     end
 
     def participant_params

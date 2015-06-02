@@ -1,0 +1,17 @@
+<div class="col-xs-12">
+  <%= form_for :participant, url: { :action => "create" },
+                              html: { class: "form-inline participant-form" } do |f| %>
+
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :phone, class: "control-label" %>
+        <%= f.phone_field :phone, class: "form-control" %>
+      </div>
+
+      <%= f.hidden_field :event_id, value: @event.id %>
+
+        <%= f.submit "Save" %>
+        <%= link_to "I'm done", event_participants_path(@event) %>
+    </div>
+  <% end %>
+</div>

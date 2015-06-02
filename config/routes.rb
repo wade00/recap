@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :memories, only: [:index, :new, :create]
-    resources :invites, only: [:new, :create, :destroy]
-    resources :participants, only: [:new, :create, :destroy]
+    resources :participants, only: [:index, :new, :create, :destroy]
   end
 end
