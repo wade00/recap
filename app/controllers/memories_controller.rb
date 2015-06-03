@@ -15,7 +15,7 @@ class MemoriesController < ApplicationController
 
     respond_to do |format|
       if @memory.save
-        format.html redirect_to thanks_path
+        format.html { redirect_to thanks_path }
       else
         format.html { render :new }
       end

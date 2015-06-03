@@ -9,7 +9,7 @@
 
 .event-memory-header {
   h1 {
-    color: #BBB;
+    color: $primarygreen;
     font-size: 6em;
     font-weight: 700;
     margin: 0;
@@ -76,5 +76,11 @@
 footer {
   p {
     font-size: 2em;
+    margin-bottom: 100px;
   }
+}
+
+.wide-container {
+  margin-left: -999px;
+  margin-right: -999px;
 }
