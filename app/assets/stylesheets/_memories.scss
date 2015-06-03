@@ -1,30 +1,19 @@
-body {
-  background: url(image_path("homepage-stripes.jpg")) no-repeat center center;
-  background-size: cover;
-  background-color: #4A4C5D;
-  color: #DDD;
-}
-
-.save-memory {
-  width: 100%;
-}
-
 .event-image {
-  height: 100px;
+  height: 200px;
   overflow-y: hidden;
   opacity: 0.5;
-  margin-bottom: -70px;
-  z-index: -9999;
+  margin-left: -999px;
+  margin-right: -999px;
+  margin-bottom: -200px;
 }
 
 .event-memory-header {
   h1 {
-    color: #FFF;
-    font-size: 42px;
+    color: #BBB;
+    font-size: 6em;
     font-weight: 700;
-  }
-  span {
-  font-weight: 100;
+    margin: 0;
+    padding: 30px;
   }
 }
 
@@ -32,13 +21,50 @@ body {
   padding-top: 15px;
   label {
     font-weight: 300;
+    font-size: 3em;
   }
   input {
     border-radius: 0;
+    font-size: 3em;
   }
+  .memory-description-field {
+    height: 200px;
+    margin-bottom: 60px;
+    font-size: 2em;
+  }
+}
+
+.file-upload {
+  color: #FFF;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  margin: 50px 0;
+  width: 100%;
+  input.memory-image-field {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+
+.save-memory {
+  height: 100px;
+  width: 100%;
 }
 
 .recap-description {
   margin: 5px 0 40px;
+  font-size: 3em;
   font-weight: 100;
+}
+
+footer {
+  p {
+    font-size: 2em;
+  }
 }

@@ -6,21 +6,42 @@ html, body {
 }
 
 .btn {
-  border-radius: 0px;
+  border-radius: 0;
+}
+
+.btn-default {
+  background-color: $lightgreen;
+  border: 1px solid $lightgreen;
+  border-bottom: 8px solid darken($lightgreen, 10%);
+  &:hover {
+    background-color: darken($lightgreen, 5%);
+    border: 1px solid darken($lightgreen, 5%);
+    border-bottom: 8px solid darken($lightgreen, 15%);
+  }
+  &:active, &:focus {
+    background-color: darken($lightgreen, 5%);
+    border: 1px solid darken($lightgreen, 5%);
+    border-bottom: 8px solid darken($lightgreen, 5%);
+  }
 }
 
 .btn-primary {
   background-color: $primarygreen;
   border: 1px solid $primarygreen;
-  border-bottom: 2px solid darken($primarygreen, 10%);
+  border-bottom: 8px solid darken($primarygreen, 10%);
   &:hover {
     background-color: darken($primarygreen, 5%);
     border: 1px solid darken($primarygreen, 5%);
-    border-bottom: 2px solid darken($primarygreen, 15%);
+    border-bottom: 8px solid darken($primarygreen, 15%);
   }
   &:active, &:focus {
     background-color: lighten($primarygreen, 5%);
     border: 1px solid lighten($primarygreen, 5%);
-    border-bottom: 2px solid darken($primarygreen, 5%);
+    border-bottom: 8px solid darken($primarygreen, 5%);
   }
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 50px;
 }

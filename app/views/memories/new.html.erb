@@ -1,12 +1,9 @@
 <div class="row text-center">
   <div class="event-memory-header">
-    <% if @event.image.present? %>
-      <div class="event-image">
-        <%= image_tag @event.image(:header) %>
-      </div>
-    <% end %>
     <h1><%= @event.name %></h1>
   </div>
+
+  <hr />
 
   <div class="col-xs-12">
     <%= form_for :memories, url: { :action => 'create' }, html: { class: "new-memory-form"} do |f| %>
@@ -14,14 +11,16 @@
         <%= render "shared/errors", resource: @memory %>
       <% end %>
 
-      <div class="form-group">
-        <%= f.label :image, "Snap or upload a picture:", class: "control-label" %>
-        <%= f.file_field :image, class: "form-control", value: @memory.image %>
+      <div class="file-upload btn btn-default form-group">
+        <%= f.label :image, "Snap or upload a picture", class: "control-label" %>
+        <%= f.file_field :image, class: "form-control memory-image-field", value: @memory.image %>
       </div>
 
       <div class="form-group">
-        <%= f.label :description, "Tell us about it:", class: "control-label" %>
-        <%= f.text_area :description, class: "form-control", value: @memory.description %>
+        <%= f.label :description, "What's going on here?", class: "control-label" %>
+        <%= f.text_area :description, class: "form-control memory-description-field",
+                                      value: @memory.description,
+                                      placeholder: "Be funny now..." %>
       </div>
 
       <%= f.hidden_field :event_id, value: @event.id %>

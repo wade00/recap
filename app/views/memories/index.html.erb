@@ -1,12 +1,13 @@
 <div class="container text-center">
   <div class="event-memory-header">
-    <h1><%= @event.name %> <span>Recap</span></h1>
+    <h1><%= @event.name %> Recap</h1>
   </div>
+
   <hr />
 
   <% @memories.each do |memory| %>
-    <div class="recap-image">
-      <%= image_tag memory.image(:medium) %>
+    <div class="recap-image text-center">
+      <%= image_tag memory.image(:recap) %>
     </div>
     <div class="recap-description">
       <%= memory.description %>
