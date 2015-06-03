@@ -6,11 +6,10 @@ task :send_sms => :environment do
   participants = event.participants
 
   participants.each do |participant|
-    puts participant.phone
-  #   client.messages.create({
-  #     from: ENV["TWILIO_PHONE"],
-  #     to: particpant.phone,
-  #     body: "Snap a pic of what's going on right now! Go to: http://recapapp.herokuapp.com"
-  #   })
+    client.messages.create({
+      from: ENV["TWILIO_PHONE"],
+      to: participant.phone,
+      body: "Let's document some shit. Go to: http://recapapp.herokuapp.com/events/1/memories/new"
+    })
   end
 end
